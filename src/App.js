@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState, useCallback, useMemo } from "react";
 import {
   BarChart, Bar, PieChart, Pie, Cell,

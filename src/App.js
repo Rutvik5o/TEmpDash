@@ -174,10 +174,29 @@ function PasswordScreen({onUnlock}) {
   return (
     <div style={{minHeight:"100vh",background:C.bg,display:"flex",alignItems:"center",justifyContent:"center"}}>
       <div style={{position:"absolute",inset:0,backgroundImage:`radial-gradient(${C.blue}15 1px,transparent 1px)`,backgroundSize:"32px 32px"}}/>
-      <div className="fade" style={{position:"relative",zIndex:1,textAlign:"center",width:400}}>
-        <div style={{width:64,height:64,borderRadius:16,background:`linear-gradient(135deg,${C.blue}30,${C.teal}30)`,border:`1px solid ${C.blue}50`,display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 24px",fontSize:28}}>📊</div>
-        <div style={{fontSize:32,fontWeight:800,letterSpacing:-1,marginBottom:4}}><span style={{color:C.blue}}>Scholar</span><span style={{color:C.teal}}>Lens</span></div>
-        <div style={{fontSize:11,color:C.sub,fontFamily:"'JetBrains Mono',monospace",letterSpacing:2,marginBottom:40}}>SCHOLARSHIP ANALYTICS PLATFORM</div>
+      <div className="fade" style={{position:"relative",zIndex:1,textAlign:"center",width:420}}>
+
+        {/* LOGO */}
+        <img
+          src="https://adimaheshsevafoundation.org/images/Adimahesh _Logo.png"
+          alt="AdiMahesh Seva Foundation"
+          style={{width:200,marginBottom:20,background:"white",borderRadius:12,padding:"10px 16px",filter:"drop-shadow(0 0 16px rgba(43,125,233,0.25))"}}
+        />
+
+        <div style={{fontSize:30,fontWeight:800,letterSpacing:-1,marginBottom:4}}>
+          <span style={{color:C.blue}}>Scholar</span><span style={{color:C.teal}}>Lens</span>
+        </div>
+
+        {/* POWERED BY LINE */}
+        <div style={{fontSize:11,color:C.sub,fontFamily:"'JetBrains Mono',monospace",letterSpacing:1.5,marginBottom:6}}>
+          SCHOLARSHIP ANALYTICS PLATFORM
+        </div>
+        <div style={{fontSize:11,color:C.sub,marginBottom:36,display:"flex",alignItems:"center",justifyContent:"center",gap:6}}>
+          <span style={{color:C.dim}}>——</span>
+          <span>Powered by <a href="https://adimaheshsevafoundation.org" target="_blank" rel="noreferrer" style={{color:C.teal,textDecoration:"none",fontWeight:600}}>AdiMahesh Seva Foundation</a></span>
+          <span style={{color:C.dim}}>——</span>
+        </div>
+
         <div style={{background:C.card,border:`1px solid ${err?C.red:C.border}`,borderRadius:16,padding:"32px 36px",boxShadow:"0 24px 64px #00000060",transition:"border-color .3s"}}>
           <div style={{fontSize:11,color:C.sub,textAlign:"left",marginBottom:10,fontWeight:600,letterSpacing:1}}>ACCESS CODE</div>
           <input type="password" value={pw} onChange={e=>setPw(e.target.value)} onKeyDown={e=>e.key==="Enter"&&attempt()} placeholder="Enter password" autoFocus
@@ -185,11 +204,14 @@ function PasswordScreen({onUnlock}) {
           {err&&<div style={{color:C.red,fontSize:12,marginBottom:10}}>✗ Incorrect password</div>}
           <button onClick={attempt} style={{width:"100%",padding:"13px",background:`linear-gradient(135deg,${C.blue},${C.teal})`,border:"none",borderRadius:9,color:C.white,fontWeight:700,fontSize:14,cursor:"pointer",fontFamily:"'Plus Jakarta Sans',sans-serif",marginTop:4}}>UNLOCK →</button>
         </div>
+
+        <div style={{marginTop:20,fontSize:11,color:C.dim}}>
+          © AdiMahesh Seva Foundation · Restricted Access
+        </div>
       </div>
     </div>
   );
 }
-
 /* ── KPI ── */
 function KPI({label,value,sub,accent,delay=0}) {
   return (

@@ -1,8 +1,8 @@
 import { useState, useCallback, useMemo } from "react";
 import {
-  BarChart, Bar, LineChart, Line, PieChart, Pie, Cell,
+  BarChart, Bar, PieChart, Pie, Cell,
   ScatterChart, Scatter, AreaChart, Area,
-  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from "recharts";
 import Papa from "papaparse";
 
